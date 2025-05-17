@@ -1,3 +1,5 @@
+import UI from "./UI.js";
+
 export default class Calculator{
     constructor(dominio, codominio, relaciones) {
         this.dominio = dominio;
@@ -37,9 +39,17 @@ export default class Calculator{
             tipoRelacionBinaria = cardinalidad; //SI ES UNA RELACIÓN SU CLASIFICACION SERÁ POR CARDINALIDAD
         }
 
-        //Mostrar los datos en UI
-
         console.timeEnd('Execution time');
+
+        // Se valida si puede ser construido el diagrama digital
+        let elementosDiagrama = null;
+
+        if (this.dominio.length <= 10 && this.codominio.length <= 10 && this.relaciones.length <= 10) {
+            elementosDiagrama = [this.dominio, this.codominio, this.relaciones]
+        }
+
+        //Mostrar los resultados del análisis en UI
+        UI.showResult(relacionBinaria, tipoRelacionBinaria, funcionInversa, elementosDiagrama);        
     }
 
     //* Método para validar si es funcion o no

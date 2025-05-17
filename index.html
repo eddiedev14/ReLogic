@@ -112,7 +112,7 @@
             <button type="submit" class="form__submit">Calcular</button>
         </form>
 
-        <div class="sk-chase slider hidden">
+        <div class="sk-chase spinner hidden">
             <div class="sk-chase-dot"></div>
             <div class="sk-chase-dot"></div>
             <div class="sk-chase-dot"></div>
@@ -130,31 +130,37 @@
                     </div>
                     <div class="card__content">
                         <h4 class="card__title">Tipo de Relación Binaria</h4>
-                        <p class="card__paragraph">La relación binaria es una RELACIÓN porque...</p>
+                        <p class="card__paragraph" id="binaryRelation">La relación binaria entre los conjuntos es una </p>
                     </div>
                 </div>
                 <div class="result__card">
                     <div class="card__img">
-                        <img src="assets/svg/relation-type.svg" alt="Relation type icon" class="card__icon">
+                        <img src="" alt="Relation type icon" class="card__icon" id="binaryRelationImg">
                     </div>
                     <div class="card__content">
-                        <h4 class="card__title">Tipo de Relación/Función</h4>
-                        <p class="card__paragraph">El tipo de relación presentada es 1:1 o Inyectiva</p>
+                        <h4 class="card__title" id="binaryRelationTypeTitle"></h4>
+                        <p class="card__paragraph" id="binaryRelationType"></p>
+                    </div>
+                </div>
+                <div class="result__card hidden" id="inverseFunctionContainer">
+                    <div class="card__img">
+                        <img src="assets/svg/inverse-function.svg" alt="Inverse function icon" class="card__icon">
+                    </div>
+                    <div class="card__content">
+                        <h4 class="card__title">Función Inversa</h4>
+                        <p class="card__paragraph" id="inverseFunction"></p>
                     </div>
                 </div>
             </div>
-            <div class="result__subsection result__subsection--properties">
-                <h3 class="subsection__subtitle">Propiedades de la Relación Binaria</h3>
-                <p class="subsection__paragraph">La relación binaria es reflexiva pues ..., simetrica pues... y transitiva pues.... A continuación se presentan las cerraduras necesarias</p>
-                <ul class="subsection__list">
-                    <li class="subsection__item"><strong>Cerradura Propiedad Reflexiva:</strong></li>
-                    <li class="subsection__item"><strong>Cerradura Propiedad Simetría:</strong></li>
-                    <li class="subsection__item"><strong>Cerradura Propiedad Transitiva:</strong></li>
-                </ul>
-            </div>
             <div class="result__subsection result__subsection--diagram">
                 <h3 class="subsection__subtitle">Diagrama Sagital</h3>
+                <div id="diagramContainer">
+
+                </div>
             </div>
+            <button class="result__screenshoot" title="Guardar Análisis como Imagen">
+                
+            </button>
         </section>
     </main>
 

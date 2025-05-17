@@ -426,6 +426,7 @@ body, input, label, button{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 16px;
     padding-bottom: 20px;
     border-bottom: 1px solid #DDDDDD;
@@ -433,12 +434,18 @@ body, input, label, button{
 }
 
 .result__card{
+    width: 45%;
+    flex-grow: 1;
     border: 1px solid #D8D8D8;
     border-radius: 6px;
     padding: 4px 8px;
     display: flex;
     align-items: center;
     gap: 8px;
+}
+
+.result__card.hidden{
+    display: none;
 }
 
 .result__card .card__img{
@@ -495,8 +502,17 @@ body, input, label, button{
     font-size: 0.875em;
 }
 
-.result__subsection--diagram{
-    padding-bottom: 200px;
+.result__subsection--diagram.hidden{
+    display: none;
+}
+
+#diagramContainer {
+  position: relative;
+  width: 100%;
+  min-height: 250px;
+  max-height: 600px;     /* o lo que decidas como límite visual */
+  overflow-y: auto;      /* muestra scroll si los elementos se salen */
+  padding: 20px;
 }
 
 .footer{

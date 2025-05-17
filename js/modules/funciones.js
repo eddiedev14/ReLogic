@@ -1,11 +1,14 @@
 import { regexListaDePares, regexListaSimple } from "./variables.js";
 import { form } from "./selectores.js";
-import Alert from "./classes/Alert.js";
 import Calculator from "./classes/Calculator.js";
+import UI from "./classes/UI.js";
+import Alert from "./classes/Alert.js";
 
 //* Función para validar formulario y formato del formulario
 export function validateForm(e) {
     e.preventDefault();
+    UI.hideSpinner();
+    UI.hideResult();
     
     //* Obtenemos la información del formulario
     const data = Object.fromEntries(new FormData(form));
@@ -87,6 +90,9 @@ export function validateForm(e) {
         );
         return;
     }
+
+    //* Se muestra spinner
+    UI.showSpinner();
 
     //* Se procede a generar el análisis
     const calc = new Calculator(setEntrada, setSalida, relaciones);
