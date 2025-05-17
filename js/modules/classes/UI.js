@@ -18,8 +18,13 @@ class UI{
             binaryRelationTypeStrong.textContent = tipoRelacionBinaria;
             tipoRelacionBinariaImg.src = "assets/svg/function.svg";
         }else{
-            tipoRelacionBinariaParagraph.textContent = "La relación presentada está caracterizada por su cardinalidad: "
-            binaryRelationTypeStrong.textContent = tipoRelacionBinaria;
+            if (tipoRelacionBinaria !== "") {
+                tipoRelacionBinariaParagraph.textContent = "La relación presentada está caracterizada por su cardinalidad: ";
+                binaryRelationTypeStrong.textContent = tipoRelacionBinaria;
+            }else{
+                tipoRelacionBinariaParagraph.textContent = "La relación presentada no tiene relaciones entre sus conjuntos.";
+            }
+
             binaryRelationTypeStrong.style.fontFamily = "Arial";
             tipoRelacionBinariaImg.src = "assets/svg/relation-type.svg";
         }

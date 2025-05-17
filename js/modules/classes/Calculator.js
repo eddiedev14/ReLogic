@@ -110,6 +110,10 @@ export default class Calculator{
         const entradas = {};
         const salidas = {};
 
+        if (this.relaciones.length === 0) {
+            return "";
+        }
+
         for (let i = 0; i < this.relaciones.length; i++) {
             const [a, b] = this.relaciones[i];
             
