@@ -1,8 +1,18 @@
-import { form } from "./modules/selectores.js";
+import { form, resultContainer, screenshootBtn } from "./modules/selectores.js";
 import { validateForm } from "./modules/funciones.js";
-import Calculator from "./modules/classes/Calculator.js";
 
+//Evento al enviar formulario
 form.addEventListener("submit", validateForm)
+
+//Evento al tomar captura
+screenshootBtn.addEventListener("click", () => {
+    html2canvas(resultContainer).then(canvas => {
+        const link = document.createElement("a");
+        link.href = canvas.toDataURL("image/png");
+        link.download = "relogic.png";
+        link.click();
+    });
+})
 
 /*
 //* Control de tiempos

@@ -11,4 +11,6 @@ export const funcionInversaParagraph = document.querySelector("#inverseFunction"
 export const diagramSection = document.querySelector(".result__subsection--diagram");
 export const diagramContainer = document.querySelector("#diagramContainer");
 
+export const screenshootBtn = document.querySelector(".result__screenshoot");
+
 export const spinner = document.querySelector(".spinner");
