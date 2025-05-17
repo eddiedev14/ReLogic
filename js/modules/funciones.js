@@ -50,8 +50,9 @@ export function validateForm(e) {
         return;
     }
 
-    //* Verificamos si los elementos de las relaciones están en los conjuntos
+    //* Verificamos si los elementos de las relaciones están en los conjuntos y que no hayan pares identicos en las relaciones
     const errores = [];
+    const paresRegistrados = {};
 
     //Se recorre cada elemento del arreglo de relaciones, es decir cada par (a,b)
     relaciones.forEach(rel => {
@@ -67,6 +68,14 @@ export function validateForm(e) {
         if (!setSalida.includes(b)) {
             errores.push(`"${b}" no está en el conjunto de salida.`); //Se añade un elemento al array de errores
         }
+
+        //Se valida si hay pares identicos repetidos
+        const clave = `${a},${b}`;
+        if (paresRegistrados[clave]) {
+            errores.push(`El par (${a},${b}) está repetido.`); //Se añade un elemento al array de errores
+        }
+
+        paresRegistrados[clave] = true; //Se añade la clave al objeto y se define como true
     });
 
     // Si hay errores (errores.length > 0), muestra la alerta
@@ -81,7 +90,7 @@ export function validateForm(e) {
 
     //* Se procede a generar el análisis
     const calc = new Calculator(setEntrada, setSalida, relaciones);
-    calc.analyzeEntries();
+    calc.analizarEntradas();
 }
 
 function parseFields(setIn, setOut, relations) {

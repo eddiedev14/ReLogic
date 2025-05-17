@@ -2,4 +2,4 @@
 export const regexListaSimple = /^\{\s*(-?[a-zA-Z0-9]+)(\s*,\s*-?[a-zA-Z0-9]+)*\s*\}$/;
 
 //* regexListaDePares: Puede estar vacío: {}, Si no está vacío, deben ser pares entre paréntesis, Cada par con dos elementos (letra o número) separados por coma, Todo contenido dentro de llaves {}
-export const regexListaDePares  = /^\{\s*(\(\s*(-?\d+|[a-zA-Z])\s*,\s*(-?\d+|[a-zA-Z])\s*\)(\s*,\s*\(\s*(-?\d+|[a-zA-Z])\s*,\s*(-?\d+|[a-zA-Z])\s*\))*)?\s*\}$/;
+export const regexListaDePares = /^\{\s*(\(\s*(-?\w+)\s*,\s*(-?\w+)\s*\)(\s*,\s*\(\s*(-?\w+)\s*,\s*(-?\w+)\s*\))*)?\s*\}$/;
