@@ -4,18 +4,18 @@ import Calculator from "./modules/classes/Calculator.js";
 
 form.addEventListener("submit", validateForm)
 
-/* 
-* Control de tiempos
+/*
+//* Control de tiempos
 const entrada = [];
 const salida = [];
 const relaciones = [];
 
-for (let i = 1; i <= 50000; i++) {
-    entrada.push('a' + i);
-    salida.push('b' + i);
-    relaciones.push(['a' + i, 'b' + i]);
+for (let i = 1; i <= 100; i++) {
+        entrada.push('a' + i);
+        salida.push('b' + i);
+        relaciones.push(['a' + i, 'b' + i]); // función 1:1
 }
 
 const calc = new Calculator(entrada, salida, relaciones);
-console.log('¿Es función?', calc.isFunction());
+calc.analizarEntradas();
 */

@@ -2,7 +2,7 @@ export default class Calculator{
     constructor(dominio, codominio, relaciones) {
         this.dominio = dominio;
         this.codominio = codominio;
-        this.relaciones = relaciones;
+        this.relaciones = relaciones; // [[a,b], [c, d]]
     }
 
     //*Método principal
@@ -12,6 +12,7 @@ export default class Calculator{
         //Variables de resultado
         let relacionBinaria;
         let tipoRelacionBinaria;
+        let funcionInversa = null;
 
         //* 1. Validar si es una funcion o relación
         relacionBinaria = this.esFuncion() ? "FUNCIÓN" : "RELACIÓN"; 
@@ -22,6 +23,9 @@ export default class Calculator{
         if (relacionBinaria === "FUNCIÓN") { //SI ES UNA FUNCION SU CLASIFICACION SERÁ POR TIPO (INYECTIVA -> 1:1, SOBREYECTIVA -> CODOMINIO = RANGO, BIYECTIVA -> Inyectiva y Sobreyectiva)
             if (cardinalidad === "1:1" && this.esCodominioRango()) {
                 tipoRelacionBinaria = "es BIYECTIVA (INYECTIVA Y SOBREYECTIVA)";
+                
+                //Se calcula la inversa porque es biyectiva
+                funcionInversa = this.calcularFuncionInversa();
             }else if (cardinalidad === "1:1") {
                 tipoRelacionBinaria = "es INYECTIVA (1:1)";
             }else if (this.esCodominioRango()) {
@@ -33,7 +37,7 @@ export default class Calculator{
             tipoRelacionBinaria = cardinalidad; //SI ES UNA RELACIÓN SU CLASIFICACION SERÁ POR CARDINALIDAD
         }
 
-        console.log(`${relacionBinaria} y ${tipoRelacionBinaria}`);
+        //Mostrar los datos en UI
 
         console.timeEnd('Execution time');
     }
@@ -169,5 +173,28 @@ export default class Calculator{
         }
 
         return true; // Sí es rango
+    }
+
+    //* Método para calcular función inversa
+    // Dada una función 𝑓: 𝐴→𝐵, la función inversa 𝑓−1:𝐵 → 𝐴 "invierte" la relación, es decir, para cada par (𝑎,𝑏) en 𝑓, en la inversa estará (𝑏,𝑎).
+    // Pero solo existe la función inversa si 𝑓 biyectiva, porque la inversa también debe ser una función.
+    
+    calcularFuncionInversa(){
+        // Se construye la función inversa invirtiendo los pares
+        let resultado = "{";
+
+        for (let i = 0; i < this.relaciones.length; i++) {
+            const par = this.relaciones[i]; // [a, b]
+            
+            // Construir string de par invertido "[b, a]"
+            resultado += "(" + par[1] + ", " + par[0] + ")";
+            
+            if (i !== this.relaciones.length - 1) {
+                resultado += ", "; // Añadir coma menos al final
+            }
+        }
+
+        resultado += "}";
+        return resultado; 
     }
 }
