@@ -14,6 +14,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <header class="header">
@@ -70,7 +72,7 @@
                 </div>
                 <div class="card__content">
                     <h3 class="card__title">Crea las Relaciones Binarias</h3>
-                    <p class="card__paragraph">Relaciona elementos entre los conjuntos mediante la notación matemática: {(a,b),(b,c)...}</p>
+                    <p class="card__paragraph">Relaciona elementos entre los conjuntos mediante la notación matemática: <span class="number">{(a,b),(b,c)...}</span></p>
                 </div>
             </div>
             <div class="steps__card">
@@ -94,23 +96,23 @@
         <form action="#" class="main__form">
             <div class="form__group">
                 <label for="set-in" class="form__label">CONJUNTO DE ENTRADA (DOMINIO)</label>
-                <input type="text" class="form__input" id="set-in" placeholder="Ingresa tu conjunto de entrada">
-                <span class="form__span">Formato: {a, b, c, d}. Ejemplo: {1, -5, 2, 8}</span>
+                <input type="text" class="form__input" id="setIn" name="setIn" placeholder="Ingresa tu conjunto de entrada">
+                <span class="form__span">Formato: <span class="number">{a, b, c, d}</span>. Ejemplo: <span class="number">{1, -5, 2, 8}</span></span>
             </div>
             <div class="form__group">
                 <label for="set-out" class="form__label">CONJUNTO DE SALIDA (CODOMINIO)</label>
-                <input type="text" class="form__input" id="set-out" placeholder="Ingresa tu conjunto de salida">
-                <span class="form__span">Formato: {a, b, c, d}. Ejemplo: {1, -5, 2, 8}</span>
+                <input type="text" class="form__input" id="setOut" name="setOut" placeholder="Ingresa tu conjunto de salida">
+                <span class="form__span">Formato: <span class="number">{1, -5, 2, 8}</span>. Ejemplo: <span class="number">{1, -5, 2, 8}</span></span>
             </div>
             <div class="form__group">
                 <label for="relations" class="form__label">RELACIONES BINARIAS</label>
-                <input type="text" class="form__input" id="relations" placeholder="Ingresa tu conjunto de relaciones binarias">
-                <span class="form__span">Formato: {(a, b), (b, c), (d, e)}. Ejemplo: {(3, 2), (4, 5), (6,2)}</span>
+                <input type="text" class="form__input" id="relations" name="relations" placeholder="Ingresa tu conjunto de relaciones binarias">
+                <span class="form__span">Formato: <span class="number">{(a, b), (b, c), (d, e)}</span>. Ejemplo: <span class="number">{(3, 2), (4, 5), (6,2)}</span></span>
             </div>
             <button type="submit" class="form__submit">Calcular</button>
         </form>
 
-        <div class="sk-chase hidden">
+        <div class="sk-chase slider hidden">
             <div class="sk-chase-dot"></div>
             <div class="sk-chase-dot"></div>
             <div class="sk-chase-dot"></div>
@@ -160,5 +162,7 @@
         <img src="assets/img/uao.png" alt="UAO logo" class="footer__logo">
         <p class="footer__copy">Copyright &copy; 2025 | Eddie Santiago Delgado Campo, Alex Yohan Silva Mina, Santiago Melo Herrera</p>
     </footer>
+
+    <script type="module" src="js/app.js"></script>
 </body>
 </html>
