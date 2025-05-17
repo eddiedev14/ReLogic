@@ -4,14 +4,161 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReLogic</title>
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon//favicon.svg" />
+    <link rel="shortcut icon" href="assets/favicon//favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon//apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="ReLogic" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="manifest" href="assets/favicon//site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    
+    <header class="header">
+        <nav class="nav">
+            <figure class="nav__figure">
+                <img src="assets/img/logo.png" class="nav__logo" alt="ReLogic Logo">
+            </figure>
+            <ul class="nav__items">
+                <li class="nav__item"><a href="#hero">Inicio</a></li>
+                <li class="nav__item"><a href="#main">Calculadora de Relaciones y Funciones</a></li>
+            </ul>
+            <a href="#main" class="nav__cta">¡Probar Ahora!</a>
+        </nav>
+
+        <section class="hero" id="hero">
+            <figure class="hero__figure">
+                <img src="assets/img/laptop.png" alt="ReLogic App in Laptop" class="hero__img">
+            </figure>
+            <div class="hero__content">
+                <h1 class="hero__title">¡Domina Funciones y Relaciones con <span>ReLogic!</span></h1>
+                <p class="hero__paragraph">Una forma intuitiva de aprender matemáticas discretas.</p>
+                <div class="hero__buttons">
+                    <a href="#main" class="hero__button hero__button--primary">¡Probar Ahora!</a>
+                    <a href="#steps" class="hero__button">Paso a Paso</a>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <section class="steps" id="steps">
+        <div class="steps__content">
+            <h2 class="steps__title">¿Cómo Funciona <span>ReLogic?</span></h2>
+            <p class="steps__paragraph"> Sigue estos simples pasos para explorar, aprender y visualizar los conceptos clave de las matemáticas discretas de forma interactiva.</p>
+        </div>
+        <div class="steps__cards">
+            <div class="steps__card">
+                <div class="card__icon">
+                    <div class="card__enumeration">
+                        <span>1</span>
+                    </div>
+                    <img src="assets/svg/set.svg" alt="Set icon" class="card__svg">
+                </div>
+                <div class="card__content">
+                    <h3 class="card__title">Define tus Conjuntos</h3>
+                    <p class="card__paragraph">Ingresa los elementos de los conjuntos de entrada y salida desde campos fáciles de usar.</p>
+                </div>
+            </div>
+            <div class="steps__card">
+                <div class="card__icon">
+                    <div class="card__enumeration">
+                        <span>2</span>
+                    </div>
+                    <img src="assets/svg/relation.svg" alt="Relation icon" class="card__svg">
+                </div>
+                <div class="card__content">
+                    <h3 class="card__title">Crea las Relaciones Binarias</h3>
+                    <p class="card__paragraph">Relaciona elementos entre los conjuntos mediante la notación matemática: {(a,b),(b,c)...}</p>
+                </div>
+            </div>
+            <div class="steps__card">
+                <div class="card__icon">
+                    <div class="card__enumeration">
+                        <span>3</span>
+                    </div>
+                    <img src="assets/svg/learn.svg" alt="Learn icon" class="card__svg">
+                </div>
+                <div class="card__content">
+                    <h3 class="card__title">Visualiza y Aprende</h3>
+                    <p class="card__paragraph">Recibe un análisis detallado y, si es posible, un diagrama sagital ilustrativo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="main" id="main">
+        <h2 class="main__title">Calculadora de Funciones y Relaciones</h2>
+
+        <form action="#" class="main__form">
+            <div class="form__group">
+                <label for="set-in" class="form__label">CONJUNTO DE ENTRADA (DOMINIO)</label>
+                <input type="text" class="form__input" id="set-in" placeholder="Ingresa tu conjunto de entrada">
+                <span class="form__span">Formato: {a, b, c, d}. Ejemplo: {1, -5, 2, 8}</span>
+            </div>
+            <div class="form__group">
+                <label for="set-out" class="form__label">CONJUNTO DE SALIDA (CODOMINIO)</label>
+                <input type="text" class="form__input" id="set-out" placeholder="Ingresa tu conjunto de salida">
+                <span class="form__span">Formato: {a, b, c, d}. Ejemplo: {1, -5, 2, 8}</span>
+            </div>
+            <div class="form__group">
+                <label for="relations" class="form__label">RELACIONES BINARIAS</label>
+                <input type="text" class="form__input" id="relations" placeholder="Ingresa tu conjunto de relaciones binarias">
+                <span class="form__span">Formato: {(a, b), (b, c), (d, e)}. Ejemplo: {(3, 2), (4, 5), (6,2)}</span>
+            </div>
+            <button type="submit" class="form__submit">Calcular</button>
+        </form>
+
+        <div class="sk-chase hidden">
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+        </div>
+
+        <section class="result hidden">
+            <h2 class="result__title">Análisis Final</h2>
+            <div class="result__cards">
+                <div class="result__card">
+                    <div class="card__img">
+                        <img src="assets/svg/relation.svg" alt="Relation icon" class="card__icon">
+                    </div>
+                    <div class="card__content">
+                        <h4 class="card__title">Tipo de Relación Binaria</h4>
+                        <p class="card__paragraph">La relación binaria es una RELACIÓN porque...</p>
+                    </div>
+                </div>
+                <div class="result__card">
+                    <div class="card__img">
+                        <img src="assets/svg/relation-type.svg" alt="Relation type icon" class="card__icon">
+                    </div>
+                    <div class="card__content">
+                        <h4 class="card__title">Tipo de Relación/Función</h4>
+                        <p class="card__paragraph">El tipo de relación presentada es 1:1 o Inyectiva</p>
+                    </div>
+                </div>
+            </div>
+            <div class="result__subsection result__subsection--properties">
+                <h3 class="subsection__subtitle">Propiedades de la Relación Binaria</h3>
+                <p class="subsection__paragraph">La relación binaria es reflexiva pues ..., simetrica pues... y transitiva pues.... A continuación se presentan las cerraduras necesarias</p>
+                <ul class="subsection__list">
+                    <li class="subsection__item"><strong>Cerradura Propiedad Reflexiva:</strong></li>
+                    <li class="subsection__item"><strong>Cerradura Propiedad Simetría:</strong></li>
+                    <li class="subsection__item"><strong>Cerradura Propiedad Transitiva:</strong></li>
+                </ul>
+            </div>
+            <div class="result__subsection result__subsection--diagram">
+                <h3 class="subsection__subtitle">Diagrama Sagital</h3>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <img src="assets/img/uao.png" alt="UAO logo" class="footer__logo">
+        <p class="footer__copy">Copyright &copy; 2025 | Eddie Santiago Delgado Campo, Alex Yohan Silva Mina, Santiago Melo Herrera</p>
+    </footer>
 </body>
 </html>
