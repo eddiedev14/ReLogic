@@ -3,6 +3,7 @@ import { diagramContainer, diagramSection, funcionInversaContainer, funcionInver
 class UI{
     showResult(relacionBinaria, tipoRelacionBinaria, funcionInversa, elementosDiagrama = null){
         //* Relacion Binaria
+        relacionBinariaParagraph.innerHTML = "La relación binaria entre los conjuntos es una ";
         const binaryRelationStrong = document.createElement("STRONG");
         binaryRelationStrong.textContent = relacionBinaria;
         relacionBinariaParagraph.appendChild(binaryRelationStrong);
