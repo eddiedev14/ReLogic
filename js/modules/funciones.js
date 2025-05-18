@@ -103,7 +103,7 @@ function parseFields(setIn, setOut, relations) {
     const setEntrada = parseSetToArray(setIn);
     const setSalida = parseSetToArray(setOut);
     let relaciones = relations
-        .replace(/[{}]/g, "") // Se quitan las llaves del dato ingresado: {(a, b), (c, d)} => (a,b), (c,d) 
+        .replace(/[{}]/g, "") // Se quitan las llaves del dato ingresado: {(a, b), (c, d)} => (a,b), (c,d)
         .match(/\([^)]+\)/g) || [] //Busca todas las subcadenas que empiezan con (, tienen uno o más caracteres que no sean ), y terminan con ). => ["(a,b)", "(c,d)", "(x,y)"], si no encuentra devuelve arreglo vacio
     
     //* Método Match => Es un método de las cadenas en JavaScript que busca todas las coincidencias que cumplen con una expresión regular y devuelve un array con esas coincidencias. 
@@ -126,12 +126,12 @@ function parseSetToArray(input) {
     .replace(/[{}]/g, "") // Se quitan las llaves del dato ingresado: {a, b, c, d} => a, b, c, d
     .split(",") //Se crea un array separando los elementos por comas
     .map(e => e.trim()) //Se modifica el array para quitar espacios en blanco entre los elementos
-    .filter(e => e !== ""); //Se filtra para obtener aquellos elementos que NO VACÍOS
 }
     
 //* Función para validar si un conjunto tiene duplicados
 function hasDuplicates(arr) {
     const counts = {}; //Objeto que almacena cada elemento del conjunto y la cantidad de veces que aparecen
+
     for (const item of arr) { //Recorre cada elemento del array
         if (counts[item]) { //Significa que ya esta registrado, es decir está duplicado
             return true;

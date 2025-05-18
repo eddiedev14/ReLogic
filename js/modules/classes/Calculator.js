@@ -17,7 +17,7 @@ export default class Calculator{
         let funcionInversa = null;
 
         //* 1. Validar si es una funcion o relación
-        relacionBinaria = this.esFuncion() ? "FUNCIÓN" : "RELACIÓN"; 
+        relacionBinaria = this.esFuncion() ? "FUNCIÓN" : "RELACIÓN";
 
         //* 2. Se analiza el TIPO DE RELACION O FUNCION
         const cardinalidad = this.analizarCardinalidad();
